@@ -1,0 +1,170 @@
+
+/* Hero section */
+.container1 {
+    background-color: azure;
+    position: relative;
+    top: -100px;
+    padding: 20px 15px;
+    font-size: 25px;
+    font-weight: 300;
+    border-radius: 20px;
+    box-shadow: 2px 2px 8px 2px rgb(128, 99, 99);
+}
+@media screen and (max-width:768px) {
+    .container1{
+        position: relative;
+        top: -20px;
+    }
+}
+
+/* about hero start */
+.about-hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+#video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.about-hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+    padding: 20px;
+}
+
+.about-hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+.about-hero-content h1 span {
+    color: #1270c8;
+    font-size: 3.5rem;
+}
+.about-hero-content p {
+    font-size: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .about-hero-content {
+        padding: 10px;
+    }
+
+    .about-hero-content h1 {
+        font-size: 1.2rem;
+    }
+    .about-hero-content h1 span {
+        font-size: 1.5rem;
+    }
+
+    .about-hero-content p {
+        font-size: 0.8rem;
+    }
+}
+
+/* beyonist hero end */
+.cardImgContainer {
+    background-color: white;
+    box-shadow: 2px 2px 7px 1px rgb(204, 202, 202);
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+/* Img dot img section */
+.videoContainer {
+    position: relative;
+    width: 100%;
+}
+
+.mainVideo {
+    margin-top: 30px;
+    height: 560px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.dotsImg {
+    position: absolute;
+    width: 79%;
+    height: 440px;
+    top: 72px;
+    right: 0px;
+    left: -5px;
+
+}
+
+.building {
+
+    height: 800px;
+}
+
+/* All companies Section */
+.companies-img {
+    height: 330px;
+}
+/* Responsive code  */
+
+@media screen and (max-width:500px) {
+    .container1 p {
+        font-size: 15px;
+    }
+    
+    .dotsImg {
+        top: 90px;
+        width: 86%;
+        height: 415px;
+    }
+
+    .building {
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+@media screen and (max-width:400px) {
+    .dotsImg {
+        height: 300px;
+        top: 150px;
+
+    }
+
+    .building {
+        top: 0;
+        width: 100%;
+        height: 100%;
+        top: -10px;
+    }
+
+}
+
+@media screen and (max-width:300px) {
+    .dotsImg {
+        top: 190px;
+        width: 86%;
+        height: 240px;
+    }
+
+    .building {
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+}

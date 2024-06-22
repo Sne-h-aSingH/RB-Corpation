@@ -1,0 +1,282 @@
+/* blog hero start */
+.blog-hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+#video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.blog-hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+  padding: 20px;
+}
+
+.blog-hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.blog-hero-content h1 span {
+  font-size: 4rem;
+  color: #d6a323;
+}
+
+.blog-hero-content p {
+  font-size: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .blog-hero-content {
+    padding: 10px;
+  }
+
+  .blog-hero-content h1 {
+    font-size: 1.2rem;
+  }
+
+  .blog-hero-content h1 span {
+    font-size: 1.5rem;
+  }
+
+  .blog-hero-content p {
+    font-size: 0.8rem;
+  }
+}
+
+/* blog */
+img.img-thumbnail {
+  height: 100%;
+}
+
+img.img-thumbnail:hover {
+  scale: 1.02;
+  transition: 0.3s ease-in-out;
+}
+
+p.small {
+  text-align: justify;
+}
+
+.text-container {
+  width: 75%;
+  margin: 0 auto;
+}
+
+p.our-blog {
+  text-align: justify;
+}
+
+/* newsletter */
+.main {
+  height: 300px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(1, 12, 63);
+  align-items: center;
+  color: #cacacb;
+}
+
+.news {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  height: 50px;
+  width: 365px;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+@media screen and (max-width:380px) {
+  input {
+    width: 250px;
+  }
+
+}
+
+.search-container {
+  height: 200px;
+  width: 500px;
+}
+
+.btn-success {
+  height: 50px;
+  width: 100px;
+  background-color: #FF7D00 !important;
+  font-weight: 700;
+}
+
+.btn-success:hover {
+  background-color: #e1ab07 !important;
+}
+
+/* More blogs */
+
+.slide-container {
+  max-width: 1120px;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.slide-content {
+  margin: 0 40px;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.card {
+  border-radius: 25px;
+  border: none !important;
+  background-color: yellow;
+}
+
+.image-content,
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 14px;
+}
+
+.name{
+  z-index: 5;
+}
+
+.image-content {
+  position: relative;
+  row-gap: 5px;
+  padding: 25px 0;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #4070f4;
+  border-radius: 25px 25px 0 25px;
+}
+
+.overlay::before,
+.overlay::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: #4070f4;
+}
+
+.overlay::after {
+  border-radius: 0 25px 0 0;
+  background-color: #fff;
+}
+
+.card-image {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: #fff;
+  padding: 3px;
+}
+
+.card-image .card-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #4070f4;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+}
+
+.description {
+  font-size: 14px;
+  color: #707070;
+  text-align: center;
+}
+
+.button {
+  border: none;
+  font-size: 16px;
+  color: #fff;
+  padding: 8px 16px;
+  background-color: #4070f4;
+  border-radius: 6px;
+  margin: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: #265df2;
+}
+
+.swiper-navBtn {
+  color: #6e93f7;
+  transition: color 0.3s ease;
+}
+
+.swiper-navBtn:hover {
+  color: #4070f4;
+}
+
+.swiper-navBtn::before,
+.swiper-navBtn::after {
+  font-size: 35px;
+}
+
+.swiper-button-next {
+  right: 0;
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+
+.swiper-pagination-bullet {
+  background-color: #6e93f7;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #4070f4;
+}
+
+@media screen and (max-width: 768px) {
+  .slide-content {
+    margin: 0 10px;
+  }
+
+  .swiper-navBtn {
+    display: none;
+  }
+}

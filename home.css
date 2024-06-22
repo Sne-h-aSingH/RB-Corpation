@@ -1,0 +1,661 @@
+/* ============================== */
+/* This is css file for index.html */
+/* ============================== */
+
+.header-wrapper {
+  display: flex;
+  height: 100lvh;
+}
+
+.header-carousel {
+  height: 100vh;
+  display: grid;
+  grid-template-areas: "stack";
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.slide {
+  display: block;
+  grid-area: stack;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  width: 100%;
+}
+
+.slide img {
+  animation: panRight 10s ease-in-out infinite;
+  height: 110%;
+  position: absolute;
+  width: 110%;
+}
+
+@keyframes panUp {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-10%);
+  }
+}
+
+@keyframes panDown {
+  0% {
+    transform: translateY(-10%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes panRight {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-10%);
+  }
+}
+
+@keyframes panLeft {
+  0% {
+    transform: translateX(-10%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.hero {
+  position: absolute;
+  top: 0;
+
+}
+
+.hero-text {
+  margin-left: 50px;
+}
+
+.hero-text h1 {
+  color: black;
+}
+
+.hero-text h4 {
+  color: rgb(33, 33, 33);
+
+  .about-section {
+    margin-top: -100px;
+  }
+}
+
+.accHorizontal {
+  max-width: 100%;
+  overflow: hidden;
+  padding: 80px 0;
+  background-color: #cbc5ea;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+
+  justify-content: center;
+  -webkit-justify-content: center;
+
+  .accHorizontal__item {
+    margin: 0 20px;
+    position: relative;
+
+    -webkit-flex: 1 0 250;
+    flex: 1 0 250;
+
+    .acc_cBox {
+      width: 250px;
+      overflow: hidden;
+      position: relative;
+
+      -webkit-transition: width 0.3s ease;
+      -moz-transition: width 0.3s ease;
+      transition: width 0.3s ease;
+
+      .acc_cImg {
+        width: 250px;
+        float: left;
+        margin-right: 20px;
+        position: relative;
+
+        -webkit-transition: background 0.3s ease;
+        -moz-transition: background 0.3s ease;
+        transition: background 0.3s ease;
+
+        img {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+
+        header {
+          color: black;
+          font-size: 16px;
+          font-family: "Roboto";
+          padding: 25px 20px;
+          border: 1px solid #e0e0e0;
+          background-color: #fcfcfc;
+          -webkit-transition: all 0.3s ease-in;
+          transition: all 0.3s ease-in;
+
+          h3 {
+            margin-bottom: 3px;
+            text-transform: uppercase;
+          }
+
+          h4 {
+            margin: 0;
+          }
+        }
+      }
+
+      .acc_cCont {
+        width: 490px;
+        max-height: 396px;
+        margin-left: 260px;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .state {
+      position: absolute;
+      top: -1000vh;
+      left: 0;
+      display: none;
+    }
+
+    .backdrop {
+      position: absolute;
+      z-index: 3;
+      margin: 0;
+      padding: 0;
+      width: 250px;
+      height: 100%;
+
+      >.fa {
+        z-index: 4;
+        display: block;
+        opacity: 0;
+        content: "";
+        position: absolute;
+        margin: 0 0 0 -30px;
+        left: 50%;
+        top: 25%;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        color: #fff;
+        text-align: center;
+        line-height: 60px;
+
+        -webkit-transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        -moz-transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+        animation: example 5s linear 2s infinite alternate;
+
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+
+        &:before {
+          font-size: 28px;
+        }
+      }
+
+      &:hover {
+        >.fa {
+          opacity: 1;
+        }
+      }
+    }
+
+    .state:checked~.backdrop:hover>.fa {
+      -webkit-transform: rotate(0);
+      -moz-transform: rotate(0);
+      -ms-transform: rotate(0);
+      -o-transform: rotate(0);
+      transform: rotate(0);
+    }
+
+    .state:checked~.acc_cBox {
+      width: 750px;
+    }
+
+    .backdrop:hover~.acc_cBox>.acc_cImg>header,
+    .state:checked~.acc_cBox>.acc_cImg>header {
+
+      h3,
+      h4 {
+        color: #fff;
+      }
+    }
+  }
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+  .accHorizontal {
+    -webkit-flex-flow: column nowrap;
+    -ms-flex-flow: column nowrap;
+
+    .accHorizontal__item {
+      margin-bottom: 20px;
+
+      .acc_cBox {
+        max-height: 400px;
+        margin: auto;
+        -webkit-transition: max-height 0.5s ease-in-out;
+        -moz-transition: max-height 0.5s ease-in-out;
+        transition: max-height 0.5s ease-in-out;
+
+        .acc_cImg {
+          float: none;
+          margin: auto;
+          margin-bottom: 20px;
+        }
+
+        .acc_cCont {
+          width: 250px;
+          margin: auto;
+          min-height: auto;
+          max-height: none;
+        }
+      }
+
+      .state:checked~.acc_cBox {
+        width: inherit;
+        max-height: 2000px;
+      }
+
+      .backdrop {
+        width: 100%;
+      }
+
+      .backdrop>.fa {
+        top: 110px;
+      }
+    }
+  }
+}
+
+.charity-section {
+  border-radius: 15px;
+  box-shadow: 10px 10px rgb(180, 180, 203);
+}
+
+.flex-container {
+  /* position: absolute; */
+  height: 100vh;
+  width: 100%;
+  display: -webkit-flex;
+  /* Safari */
+  display: flex;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+
+.flex-title {
+  color: #f1f1f1;
+  position: relative;
+  font-size: 3vw;
+  margin: auto;
+  text-align: center !important;
+  transform: rotate(90deg);
+  top: 15%;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+
+@media screen and (max-width: 768px) {
+  .flex-title {
+    transform: rotate(0deg) !important;
+    font-size: 35px;
+  }
+}
+
+.flex-about {
+  opacity: 0;
+  color: #f1f1f1;
+  position: relative;
+  width: 70%;
+  font-size: 20px;
+  padding: 5%;
+  top: 10%;
+  border: 2px solid #f1f1f1;
+  border-radius: 10px;
+  line-height: 1.1;
+  margin: auto;
+  text-align: left;
+  transform: rotate(0deg);
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+@media screen and (max-width: 768px) {
+  .flex-about {
+    padding: 0%;
+    border: 0px solid #f1f1f1;
+  }
+}
+
+.flex-slide {
+  -webkit-flex: 1;
+  /* Safari 6.1+ */
+  -ms-flex: 1;
+  /* IE 10 */
+  flex: 1;
+  cursor: pointer;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+@media screen and (max-width: 768px) {
+  .flex-slide {
+    overflow: auto;
+    overflow-x: hidden;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .flex-slide p {
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .flex-slide ul li {
+    font-size: 2em;
+  }
+}
+
+.flex-slide:hover {
+  -webkit-flex-grow: 3;
+  flex-grow: 3;
+}
+
+.beyonist {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/Images/beyonist-acc.webp');
+  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url('https://img.freepik.com/free-vector/world-environment-day-paper-style-background_23-2149394152.jpg?size=626&ext=jpg&ga=GA1.1.1768840327.1706941478&semt=ais'); */
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+@media screen and (min-width: 768px) {
+  .beyonist {
+    -moz-animation: aboutFlexSlide;
+    -moz-animation-duration: 3s;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-delay: 0s;
+    -webkit-animation: aboutFlexSlide;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-delay: 0s;
+    animation: aboutFlexSlide;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+  }
+}
+
+@keyframes aboutFlexSlide {
+  0% {
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+  }
+
+  50% {
+    -webkit-flex-grow: 3;
+    flex-grow: 3;
+  }
+
+  100% {
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .flex-title-beyonist {
+    transform: rotate(90deg);
+    top: 15%;
+    -moz-animation: beyonistFlextitle;
+    -moz-animation-duration: 3s;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-delay: 0s;
+    -webkit-animation: beyonistFlextitle;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-delay: 0s;
+    animation: beyonistFlextitle;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+  }
+}
+
+@keyframes beyonistFlextitle {
+  0% {
+    transform: rotate(90deg);
+    top: 15%;
+  }
+
+  50% {
+    transform: rotate(0deg);
+    top: 15%;
+  }
+
+  100% {
+    transform: rotate(90deg);
+    top: 15%;
+  }
+}
+
+.flex-about-beyonist {
+  opacity: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .flex-about-beyonist {
+    -moz-animation: flexAboutbeyonist;
+    -moz-animation-duration: 3s;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-delay: 0s;
+    -webkit-animation: flexAboutbeyonist;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-delay: 0s;
+    animation: flexAboutbeyonist;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+  }
+}
+
+@keyframes flexAboutbeyonist {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.finance {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/Images/finance-acc.webp');
+    /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://img.freepik.com/free-vector/world-environment-day-paper-style-background_23-2149394152.jpg?size=626&ext=jpg&ga=GA1.1.1768840327.1706941478&semt=ais'); */
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.accordion-btn {
+  color: white !important;
+  background: transparent;
+  border: 1px solid white !important;
+}
+
+input {
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+}
+
+.charity {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/Images/charity-acc.webp');
+  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('https://img.freepik.com/free-vector/world-environment-day-paper-style-background_23-2149394152.jpg?size=626&ext=jpg&ga=GA1.1.1768840327.1706941478&semt=ais'); */
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.buffet {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/Images/buffet-acc.webp');
+  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('https://img.freepik.com/free-vector/world-environment-day-paper-style-background_23-2149394152.jpg?size=626&ext=jpg&ga=GA1.1.1768840327.1706941478&semt=ais'); */
+    background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.service {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/Images/service-acc.webp');
+  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('https://img.freepik.com/free-vector/world-environment-day-paper-style-background_23-2149394152.jpg?size=626&ext=jpg&ga=GA1.1.1768840327.1706941478&semt=ais'); */
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+@-webkit-keyframes sk-cubemove {
+  25% {
+    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+  }
+
+  50% {
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+  }
+
+  75% {
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+  }
+
+  100% {
+    -webkit-transform: rotate(-360deg);
+  }
+}
+
+@keyframes sk-cubemove {
+  25% {
+    transform: translateX(42px) rotate(-90deg) scale(0.5);
+    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+  }
+
+  50% {
+    transform: translateX(42px) translateY(42px) rotate(-179deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+  }
+
+  50.1% {
+    transform: translateX(42px) translateY(42px) rotate(-180deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+  }
+
+  75% {
+    transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+  }
+}
+
+.charity-btn {
+  background-color: #7f9f80 !important;
+}
+
+.charity-btn:hover {
+  background-color: #ff9800 !important;
+}
+
+.sector-card:hover {
+  background: #fff;
+  transition: ease all 0.8s;
+  -webkit-box-shadow: 0 14px 24px rgba(62, 57, 107, 0.2);
+  box-shadow: 0 14px 24px rgba(62, 57, 107, 0.2);
+  z-index: 9;
+  left: 0;
+  -webkit-transform: translate(0, -16%);
+  transform: translate(0, -16%);
+  border-radius: 10px !important;
+}
+
+.section-card:hover .card-img-top {
+  filter: none;
+  -webkit-filter: grayscale(0);
+  -webkit-transform: scale(1.01);
+  transition: ease all 0.1s;
+  width: 45px;
+  transition: ease all 0.5s;
+}
+
+.hide-link {
+  display: none;
+}
+
+.card-title:hover+.hide-link {
+  display: block !important;
+}
